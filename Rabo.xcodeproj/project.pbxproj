@@ -26,7 +26,6 @@
 		8BDFFAC623632381003B9DCF /* CustomerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDFFAC523632381003B9DCF /* CustomerViewModel.swift */; };
 		8BDFFAC8236323F8003B9DCF /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDFFAC7236323F8003B9DCF /* DetailsViewModel.swift */; };
 		8BDFFACA2363241B003B9DCF /* CustomerListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDFFAC92363241B003B9DCF /* CustomerListViewModel.swift */; };
-		8BDFFACC23632454003B9DCF /* BaseCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDFFACB23632454003B9DCF /* BaseCollectionViewController.swift */; };
 		8BDFFACE236324AD003B9DCF /* BorderedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDFFACD236324AD003B9DCF /* BorderedView.swift */; };
 		8BDFFAD0236324CE003B9DCF /* BorderLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDFFACF236324CE003B9DCF /* BorderLayer.swift */; };
 		8BDFFAD223632511003B9DCF /* EmptyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDFFAD123632511003B9DCF /* EmptyViewController.swift */; };
@@ -47,6 +46,7 @@
 		8BDFFB0923648506003B9DCF /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDFFB0823648506003B9DCF /* Customer.swift */; };
 		8BFC9E6423649C8C0082D03A /* HomeCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDFFAED23633698003B9DCF /* HomeCoordinatorTests.swift */; };
 		8BFC9E6523649F6D0082D03A /* DetailsCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDFFAF123633707003B9DCF /* DetailsCoordinatorTests.swift */; };
+		8BFC9E672364F9CC0082D03A /* BaseCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFC9E662364F9CC0082D03A /* BaseCollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,7 +83,6 @@
 		8BDFFAC523632381003B9DCF /* CustomerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerViewModel.swift; sourceTree = "<group>"; };
 		8BDFFAC7236323F8003B9DCF /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
 		8BDFFAC92363241B003B9DCF /* CustomerListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerListViewModel.swift; sourceTree = "<group>"; };
-		8BDFFACB23632454003B9DCF /* BaseCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BaseCollectionViewController.swift; path = Cells/BaseCollectionViewController.swift; sourceTree = "<group>"; };
 		8BDFFACD236324AD003B9DCF /* BorderedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedView.swift; sourceTree = "<group>"; };
 		8BDFFACF236324CE003B9DCF /* BorderLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderLayer.swift; sourceTree = "<group>"; };
 		8BDFFAD123632511003B9DCF /* EmptyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyViewController.swift; sourceTree = "<group>"; };
@@ -104,6 +103,7 @@
 		8BDFFAFC23642F49003B9DCF /* Header.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 		8BDFFB0223642F6B003B9DCF /* CSVDecoderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSVDecoderTests.swift; sourceTree = "<group>"; };
 		8BDFFB0823648506003B9DCF /* Customer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
+		8BFC9E662364F9CC0082D03A /* BaseCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,7 +220,7 @@
 			children = (
 				8BDFFAC423632370003B9DCF /* Models */,
 				8BDFFAC12363230C003B9DCF /* Cells */,
-				8BDFFACB23632454003B9DCF /* BaseCollectionViewController.swift */,
+				8BFC9E662364F9CC0082D03A /* BaseCollectionViewController.swift */,
 				8BDFFADA23632A41003B9DCF /* CustomerCollectionViewController.swift */,
 				8BDFFADE23632AFF003B9DCF /* DetailsViewController.swift */,
 				8BDFFAD123632511003B9DCF /* EmptyViewController.swift */,
@@ -393,6 +393,7 @@
 				8BDFFAD9236325DE003B9DCF /* Instantiatable.swift in Sources */,
 				8BDFFB0023642F4A003B9DCF /* UnkeyedContainer.swift in Sources */,
 				8BDFFABE23632224003B9DCF /* LoadingViewController.swift in Sources */,
+				8BFC9E672364F9CC0082D03A /* BaseCollectionViewController.swift in Sources */,
 				8BDFFB0923648506003B9DCF /* Customer.swift in Sources */,
 				8BDFFAB623631F3B003B9DCF /* DetailsCoordinator.swift in Sources */,
 				8BDFFB0123642F4A003B9DCF /* Header.swift in Sources */,
@@ -405,7 +406,6 @@
 				8BDFFAFD23642F4A003B9DCF /* CSVDecoder.swift in Sources */,
 				8BDFFAD223632511003B9DCF /* EmptyViewController.swift in Sources */,
 				8BCC439B235F4B3B00F7698B /* AppDelegate.swift in Sources */,
-				8BDFFACC23632454003B9DCF /* BaseCollectionViewController.swift in Sources */,
 				8BDFFAC323632320003B9DCF /* CustomerViewCell.swift in Sources */,
 				8BDFFAB223631E51003B9DCF /* HomeCoordinator.swift in Sources */,
 				8BDFFAD0236324CE003B9DCF /* BorderLayer.swift in Sources */,
