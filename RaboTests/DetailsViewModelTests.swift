@@ -12,41 +12,46 @@ import XCTest
 class DetailsViewModelTests: XCTestCase {
 
     func testBaseMapping() {
-        let customer = Customer(
-            firstName: "Fiona",
-            surName: "de Vries",
-            issueCount: 7,
-            birthData: "1950-11-12T00:00:00"
-        )
+        guard let customer = Customer.mockCustomer(firstName: "Fiona", surName: "de Vries", issueCount: 7, birthDate: "1950-11-12T00:00:00") else {
+            XCTFail("Can't create mock customer")
+            return
+        }
         let model = DetailsViewModel(customer: customer)
         XCTAssertEqual(model.name, "Fiona de Vries")
         XCTAssertEqual(model.text, "Issue count: 7")
-        XCTAssertEqual(model.birthData, "1950-11-12T00:00:00")
+        XCTAssertEqual(model.birthDate, "12 nov. 1950")
     }
 
     func testEmptySurName() {
-        let customer = Customer(
-            firstName: "Fiona",
-            surName: "",
-            issueCount: 7,
-            birthData: "1950-11-12T00:00:00"
-        )
+        guard let customer = Customer.mockCustomer(firstName: "Fiona", surName: "", issueCount: 7, birthDate: "1950-11-12T00:00:00") else {
+            XCTFail("Can't create mock customer")
+            return
+        }
         let model = DetailsViewModel(customer: customer)
         XCTAssertEqual(model.name, "Fiona")
         XCTAssertEqual(model.text, "Issue count: 7")
-        XCTAssertEqual(model.birthData, "1950-11-12T00:00:00")
+        XCTAssertEqual(model.birthDate, "12 nov. 1950")
     }
     
     func testNoIssues() {
-        let customer = Customer(
-            firstName: "Fiona",
-            surName: "de Vries",
-            issueCount: 0,
-            birthData: "1950-11-12T00:00:00"
-        )
+        guard let customer = Customer.mockCustomer(firstName: "Fiona", surName: "de Vries", issueCount: 0, birthDate: "1950-11-12T00:00:00") else {
+            XCTFail("Can't create mock customer")
+            return
+        }
         let model = DetailsViewModel(customer: customer)
         XCTAssertEqual(model.name, "Fiona de Vries")
         XCTAssertEqual(model.text, "No Issues")
-        XCTAssertEqual(model.birthData, "1950-11-12T00:00:00")
+        XCTAssertEqual(model.birthDate, "12 nov. 1950")
+    }
+    
+    func testWrongDate() {
+        guard let customer = Customer.mockCustomer(firstName: "Fiona", surName: "de Vries", issueCount: 0, birthDate: "1950-13-12T00:00:00") else {
+            XCTFail("Can't create mock customer")
+            return
+        }
+        let model = DetailsViewModel(customer: customer)
+        XCTAssertEqual(model.name, "Fiona de Vries")
+        XCTAssertEqual(model.text, "No Issues")
+        XCTAssertEqual(model.birthDate, "No Birthday Date")
     }
 }

@@ -39,7 +39,10 @@ class HomeCoordinatorTests: XCTestCase {
 
     func testLoadingScreen() {
         let expectation = self.expectation(description: "Data Fetched")
-        let customer = Customer.mockCustomer()
+        guard let customer = Customer.mockCustomer() else {
+            XCTFail("Can't create mock customer")
+            return
+        }
         if let mock = (dependency?.dataProvider as? MockDataProvider) {
             mock.onFetch = { completion in
                 completion(.success([customer]))
@@ -76,7 +79,10 @@ class HomeCoordinatorTests: XCTestCase {
 
     func testShowDetails() {
         let expectation = self.expectation(description: "Data Fetched")
-        let customer = Customer.mockCustomer()
+        guard let customer = Customer.mockCustomer() else {
+            XCTFail("Can't create mock customer")
+            return
+        }
         if let mock = (dependency?.dataProvider as? MockDataProvider) {
             mock.onFetch = { completion in
                 completion(.success([customer]))

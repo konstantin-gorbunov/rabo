@@ -22,7 +22,7 @@ internal extension _CSVDecoder {
             self.headers = headers
             self.codingPath = codingPath
             self.values = row.split(separator: ",").map({ (substring) -> String in
-                if let regex = try? NSRegularExpression(pattern: "\"(.+)\"", options: .caseInsensitive) {
+                if let regex = try? NSRegularExpression(pattern: "\"(.*?)\"", options: .caseInsensitive) {
                     let modString = regex.stringByReplacingMatches(in: String(substring), options: [], range: NSRange(location: 0, length:  substring.count), withTemplate: "$1")
                     return modString
                 }

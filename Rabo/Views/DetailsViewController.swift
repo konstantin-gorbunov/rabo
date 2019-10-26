@@ -25,7 +25,7 @@ class DetailsViewController: UIViewController {
             loadViewIfNeeded()
             mainTitle?.text = viewModel?.name
             subTitle?.text = viewModel?.text
-            birthdayTitle?.text = viewModel?.birthData
+            birthdayTitle?.text = viewModel?.birthDate
         }
     }
 

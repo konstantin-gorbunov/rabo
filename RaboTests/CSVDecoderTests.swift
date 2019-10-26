@@ -81,7 +81,7 @@ class CSVDecoderTests: XCTestCase {
             XCTAssertEqual(realCustomer.firstName, "Theo")
             XCTAssertEqual(realCustomer.surName, "Jansen")
             XCTAssertEqual(realCustomer.issueCount, 5)
-            XCTAssertEqual(realCustomer.birthData, "1978-01-02T00:00:00")
+            XCTAssertEqual(realCustomer.birthDate(), Customer.dateFormatter().date(from: "1978-01-02T00:00:00"))
         }
         catch {
             print(error)

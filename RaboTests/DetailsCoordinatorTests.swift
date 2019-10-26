@@ -22,11 +22,13 @@ class DetailsCoordinatorTests: XCTestCase {
         let navigation = UINavigationController(rootViewController: UIViewController())
         let localDependency = MockDependency()
         dependency = localDependency
-        coordinator = DetailsCoordinator(
-            dependency: localDependency,
-            navigation: navigation,
-            customer: customer
-        )
+        if let customer = customer {
+            coordinator = DetailsCoordinator(
+                dependency: localDependency,
+                navigation: navigation,
+                customer: customer
+            )
+        }
     }
 
     override func tearDown() {

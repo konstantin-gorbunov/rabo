@@ -24,12 +24,25 @@ class MockDependency: Dependency {
 }
 
 extension Customer {
-    static func mockCustomer(firstName: String = "firstName", surName: String = "surName", issueCount: Int64 = 0, birthData: String = "1970-01-01T00:00:00") -> Customer {
-        return Customer(
-            firstName: firstName,
-            surName: surName,
-            issueCount: issueCount,
-            birthData: birthData
-        )
+    static func mockCustomer(firstName: String = "Theo", surName: String = "Jansen", issueCount: Int64 = 5, birthDate: String = "1978-01-02T00:00:00") -> Customer? {
+        let data = """
+        "First name","Sur name","Issue count","Date of birth"
+        "\(firstName)","\(surName)",\(issueCount),"\(birthDate)"
+        """
+        let decoder = CSVDecoder()
+        do {
+            let realCustomer = try decoder.decode(Customer.self, from: data)
+            return realCustomer
+        }
+        catch {
+            return nil
+        }
+    }
+    
+    static func dateFormatter() -> DateFormatter {
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+        return formatter
     }
 }

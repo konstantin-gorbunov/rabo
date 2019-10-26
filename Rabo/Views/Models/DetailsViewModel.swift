@@ -10,13 +10,27 @@ import UIKit
 
 struct DetailsViewModel {
     let name: String
-    let birthData: String
+    let birthDate: String
     let text: String
+    
+    private let dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .none
+        formatter.locale = Locale(identifier: "nl_NL")
+        return formatter
+    }()
 
     init(customer: Customer) {
-        birthData = customer.birthData
+        if let date = customer.birthDate() {
+            birthDate = dateFormatter.string(from: date)
+        } else {
+            birthDate = NSLocalizedString("No Birthday Date", comment: "No Birthday Date")
+        }
+        
         let nameFormat = NSLocalizedString("%@ %@", comment: "Full name")
         name = String.localizedStringWithFormat(nameFormat, customer.firstName, customer.surName).trimmingCharacters(in: .whitespaces)
+        
         if customer.issueCount > 0 {
             let issueFormat = NSLocalizedString("Issue count: %u", comment: "Issue count")
             text = String.localizedStringWithFormat(issueFormat, customer.issueCount)
